@@ -5,21 +5,217 @@
 
 /* LES VARIABLES CSS ICI */
 
+:root {
+    --fond-carte: #FFF;
+    --header:#000;
+    --footer: #000;
+    --degrade: linear-gradient(35.74deg, rgba(167, 2, 154, 0.7) -2.92%, rgba(167, 2, 154, 0) 106.13%);
+    --police-principale: Cardo, sans-serif;
+    --police-titres: "Bungee Shade", cursive;
+    --couleur-textes: #000;
+    --couleur-titres: #FFF;
+}
+
 /*---------------------- Generic ----------------------*/
 
 /* Mettre la ligne universelle pour le box-sizing */
+
+*, *::before, *::after {
+    box-sizing: border-box;
+}
+
+li {
+    list-style: none;
+}
+
+a {
+    text-decoration: none;
+}
 
 
 
 /*---------------------- Elements ----------------------*/
 
+body {
+    margin: 0;
+}
 
+h1, h2 {
+    margin: 0;
+    font-family: var(--police-titres);
+    font-size: 2.25rem;
+    color: var(--couleur-titres);
+}
+
+h2 {
+    font-size: 5rem;
+}
+
+h3 {
+    margin: 0;
+
+    font-size: 2.5rem;
+    text-transform: uppercase;
+    text-align: center;
+}
+
+h4 {
+    margin: 18px 0;
+  font-family: var(--police-principale);
+  font-size: 1.125rem;
+  text-transform: uppercase;
+}
+
+header {
+    position: fixed;
+    z-index: 100;
+    width: 100%;
+    background: var(--header);
+}
+
+.hero p, .hero a {
+    font-size: 1.5rem;
+}
 
 
 
 /*---------------------- Components ----------------------*/
 
+.conteneur {
+    margin: 0 auto;
+    max-width: 1140px;
+}
 
+.hero {
+    height: 80vh;
+    position: relative;
+
+    background: black;
+}
+
+.hero::after {
+    content: "";
+    width: 100%;
+    height: 100%;
+
+    background: var(--degrade);
+
+    position: absolute;
+    top: 0;
+    left: 0;
+
+    z-index: 1;
+}
+
+.hero .content {
+    position: absolute;
+    top: 0;
+    left: 0;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    height: 100%;
+    width: 100%;
+
+    z-index: 2;
+
+    color: white;
+}
+
+.hero video {
+    height: 100%;
+    width: 100%;
+
+    object-fit: cover;
+    opacity: 0.5;
+}
+
+.interet {
+    background: url("../images/bg-interet.jpg") fixed;
+    padding: 80px 0;
+}
+
+.cartes {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+.carte img {
+    height: 151px;
+    width: 151px;
+}
+
+.carte {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    width: 30%;
+
+    margin-bottom: 40px;
+    padding: 20px;
+
+    text-align: center;
+
+    background: #FFF;
+    box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.5);
+}
+
+.interet p {
+    margin-top: 0;
+
+    font-size: 1.125rem;
+    text-align: center;
+}
+
+.interet h3 {
+    margin-bottom: 18px;
+}
+
+
+.citation .conteneur {
+    width: 100%;
+    height: 100%;
+
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+}
+.citation {
+    height: 404px;
+    width: 100%;
+
+    color: #FFF;
+    text-align: left;
+
+    background: url("../images/bg-citation.jpg") fixed no-repeat;
+    background-size: cover;
+}
+
+
+.footer-principal {
+    height: 144px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    font-family: var(--police-principale);
+    color: #FFF;
+    font-size: 1.125rem;
+
+    background: var(--footer);
+}
+
+.footer-principal a, .hero a {
+    color: #FFF;
+}
 
 
 
